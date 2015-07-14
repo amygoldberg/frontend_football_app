@@ -3,22 +3,15 @@
   // create users' game weeks factory
   var gameWeeksFactory = function($http) {
     var factory = {};
+    factory.user = {};
     factory.gameWeeks = [];
     factory.gameWeek = {};
 
     factory.getGameWeeks = function(userId) {
-
       // allow access to the user's list of game weeks
-      return $http {
-        (
-          method: "get",
-          url: "http://localhost:3000/users" + userId,
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          }
-        }).success(function(response) {
-        angular.copy(response.user.gameWeeks, factory.gameWeeks);
+      return $http.get("http://localhost:3000/users/" + userId).success(function(response) {
+        angular.copy(response.gameWeeks, factory.gameWeeks);
+        angular.copy(response, factory.user);
       });
     };
 
