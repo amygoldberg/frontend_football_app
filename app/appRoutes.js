@@ -17,6 +17,16 @@
             controllerAs: 'gameWeeksCtrl',
             templateUrl: 'app/views/gameWeek.html'
           })
+          .when('/login', {
+            controller: 'authCtrl',
+            controllerAs: 'authCtrl',
+            templateUrl: 'app/views/login.html'
+          })
+          .when('/register', {
+            controller: 'authCtrl',
+            controllerAs: 'authCtrl',
+            templateUrl: 'app/views/register.html'
+          })
           .otherwise({
             redirectTo: '/'
           });
