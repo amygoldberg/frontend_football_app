@@ -1,0 +1,15 @@
+<h3>{{ gameWeeksCtrl.user.name}}'s game weeks</h3>
+<table>
+  <tr>
+    <th>Week</th>
+    <th>Season</th>
+    <th>Games</th>
+  </tr>
+  <tr ng-repeat="game_week in gameWeeksCtrl.user.game_weeks">
+    <td>{{ game_week.week_number }}</td>
+    <td>{{ game_week.season }}</td>
+    <td>{{ game_week.games }}</td>
+  </tr>
+</table>
+<br/>
+
