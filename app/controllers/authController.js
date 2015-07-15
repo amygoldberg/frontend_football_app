@@ -13,6 +13,13 @@ function authCtrl($location, authFactory) {
     });
   };
 
+  vm.register = function(credentials) {
+    authFactory.register(credentials).then(function(response) {
+      vm.credentials = {};
+      $location.path('');
+    });
+  };
+
   vm.logout = function() {
     authFactory.logout();
   };

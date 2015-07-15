@@ -15,6 +15,16 @@ function authFactory($http, $location, $window) {
     });
   };
 
+  var register = function(credentials) {
+
+    return $http.post('http://localhost:3000/register', credentials).success(function(response) {
+      angular.copy(response, currentUser);
+      $window.localStorage.setItem('token', response.token);
+      $http.defaults.headers.common.Authorization = 'Token token=' + response.token;
+      window.location.replace('http://localhost:5000/#/users/' + response.id);
+    });
+  };
+
   var logout = function() {
     $window.localStorage.removeItem('token');
     $location.path('/login');
