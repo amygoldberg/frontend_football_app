@@ -98,10 +98,12 @@
                         <a class="page-scroll" href="#about">about</a>
                     </li>
                     <li>
-                        <a href="#/login">login</a>
+                        <!-- <a href="#/login">login</a> -->
+                        <a data-toggle="modal" data-target="#myModal">login</a>
                     </li>
                     <li>
-                        <a href="#/register">register</a>
+                        <!-- <a href="#/register">register</a> -->
+                        <a data-toggle="modal" data-target="#registerModal">register</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">contact</a>
@@ -131,7 +133,7 @@
                     <h2 class="section-heading">how it works</h2>
                     <hr class="light">
                     <p class="text-faded">join a league. get a new game week every week. pick winners for all games.</p>
-                    <a href="#/register" class="btn btn-default btn-xl">join now</a>
+                    <a data-toggle="modal" data-target="#registerModal" class="btn btn-default btn-xl">join now</a>
                 </div>
             </div>
         </div>
@@ -294,7 +296,7 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2>create your account today</h2>
-                <a href="#/register" class="btn btn-default btn-xl wow tada">sign up</a>
+                <a data-toggle="modal" data-target="#registerModal" class="btn btn-default btn-xl wow tada">sign up</a>
             </div>
         </div>
     </aside>
@@ -335,6 +337,64 @@
     <script src="js/creative.js"></script>
 
 </body>
+
+<!-- Login Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">login</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+           <label for="username">username</label>
+           <input ng-model="authCtrl.credentials.username" type="username" class="form-control" id="username" placeholder="your username">
+          </div>
+          <div class="form-group">
+           <label for="password">password</label>
+            <input ng-model="authCtrl.credentials.password" type="password" class="form-control" id="password" placeholder="your password">
+          </div>
+         <button type="submit" class="btn btn-default" ng-click="authCtrl.login(authCtrl.credentials)" data-dismiss="modal">login</button>
+       </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">create your account</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="name">name</label>
+            <input ng-model="authCtrl.credentials.name" type="name" class="form-control" id="name" placeholder="your name">
+          </div>
+          <div class="form-group">
+           <label for="email">email</label>
+            <input ng-model="authCtrl.credentials.email" type="email" class="form-control" id="email" placeholder="your email">
+          </div>
+          <div class="form-group">
+           <label for="username">username</label>
+            <input ng-model="authCtrl.credentials.username" type="username" class="form-control" id="username" placeholder="your username">
+          </div>
+          <div class="form-group">
+           <label for="password">password</label>
+            <input ng-model="authCtrl.credentials.password" type="password" class="form-control" id="password" placeholder="your password">
+          </div>
+         <button type="submit" class="btn btn-default" ng-click="authCtrl.register(authCtrl.credentials)">make my account</button>
+       </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 </html>
 

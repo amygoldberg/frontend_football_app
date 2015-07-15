@@ -81,6 +81,7 @@ aside {
 }
 
 .navbar-default {
+    background-color: rgba(240,95,64,.50);
     border-color: rgba(34,34,34,.05);
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     background-color: #fff;
@@ -90,19 +91,24 @@ aside {
 }
 
 .navbar-default .navbar-header .navbar-brand {
+    background-color: rgba(240,95,64, .50);
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
     color: #f05f40;
+
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
+    background-color: rgba(240,95,64, .50);
     color: #eb3812;
+
 }
 
 .navbar-default .nav > li>a,
 .navbar-default .nav>li>a:focus {
+    background-color: rgba(240,95,64, .50);
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
@@ -111,67 +117,80 @@ aside {
 
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
+    background-color: rgba(240,95,64, .50);
     color: #f05f40;
 }
 
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
+    background-color: rgba(240,95,64, .50);
     color: #f05f40!important;
-    background-color: transparent;
+    /*background-color: transparent;*/
 }
 
 .navbar-default .nav > li.active>a:hover,
 .navbar-default .nav>li.active>a:focus:hover {
-    background-color: transparent;
+    background-color: rgba(240,95,64, .50);
+    /*background-color: transparent;*/
 }
 
 @media(min-width:768px) {
     .navbar-default {
+        background-color: rgba(240,95,64, .50);
         border-color: rgba(255,255,255,.3);
-        background-color: transparent;
+        /*background-color: transparent;*/
     }
 
     .navbar-default .navbar-header .navbar-brand {
+        background-color: rgba(240,95,64, .50);
         color: rgba(255,255,255,.7);
     }
 
     .navbar-default .navbar-header .navbar-brand:hover,
     .navbar-default .navbar-header .navbar-brand:focus {
+        background-color: rgba(240,95,64, .50);
         color: #fff;
     }
 
     .navbar-default .nav > li>a,
     .navbar-default .nav>li>a:focus {
+        background-color: rgba(240,95,64, .50);
         color: rgba(255,255,255,.7);
     }
 
     .navbar-default .nav > li>a:hover,
     .navbar-default .nav>li>a:focus:hover {
+        background-color: rgba(240,95,64, .50);
         color: #fff;
     }
 
     .navbar-default.affix {
+        background-color: rgba(240,95,64, .50);
         border-color: rgba(34,34,34,.05);
         background-color: #fff;
     }
 
     .navbar-default.affix .navbar-header .navbar-brand {
+        background-color: rgba(240,95,64, .50);
         font-size: 14px;
         color: #f05f40;
     }
 
     .navbar-default.affix .navbar-header .navbar-brand:hover,
     .navbar-default.affix .navbar-header .navbar-brand:focus {
+        background-color: rgba(240,95,64, .50);
         color: #eb3812;
     }
 
     .navbar-default.affix .nav > li>a,
     .navbar-default.affix .nav>li>a:focus {
+        background-color: rgba(240,95,64, .50);
         color: #222;
     }
 
     .navbar-default.affix .nav > li>a:hover,
     .navbar-default.affix .nav>li>a:focus:hover {
+        background-color: rgba(240,95,64, .50);
         color: #f05f40;
     }
 }

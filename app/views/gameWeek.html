@@ -66,7 +66,33 @@
     <br/>
     <br/>
 
-<h3>{{ gameWeeksCtrl.user.name}}'s game weeks</h3>
+
+<h3>{{ gameWeeksCtrl.user.name }} </h3>
+Filter: <input type="text" ng-model="customerFilter.name"/>
+<br/>
+<br/>
+<table>
+  <tr>
+    <th ng-click="customersCtrl.doSort('name')">Name</th>
+    <th ng-click="customersCtrl.doSort('city')">City</th>
+    <th ng-click="customersCtrl.doSort('orderTotal')">Order Total</th>
+    <th ng-click="customersCtrl.doSort('joined')">Joined</th>
+    <th>&nbsp;</th>
+  </tr>
+  <tr ng-repeat="cust in customersCtrl.customers | filter: customerFilter | orderBy:customersCtrl.sortBy:reverse">
+    <td>{{ cust.name }}</td>
+    <td>{{ cust.city}}</td>
+    <td>{{ cust.orderTotal | currency }}</td>
+    <td>{{ cust.joined | date}}</td>
+    <td><a href="#/orders/{{cust.id}}">View Orders</a></td>
+  </tr>
+</table>
+<br/>
+<span>win percentage: </span>
+<br/>
+<br/>
+
+<h3>{{ gameWeeksCtrl.user.name}}'s account</h3>
 <table>
   <tr>
     <th>Week</th>
