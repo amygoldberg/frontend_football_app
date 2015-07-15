@@ -20,12 +20,12 @@
           .when('/login', {
             controller: 'authCtrl',
             controllerAs: 'authCtrl',
-            templateUrl: 'app/views/login.html'
+            templateUrl: 'app/views/home.html'
           })
           .when('/register', {
             controller: 'authCtrl',
             controllerAs: 'authCtrl',
-            templateUrl: 'app/views/register.html'
+            templateUrl: 'app/views/home.html'
           })
           .otherwise({
             redirectTo: '/'

@@ -142,8 +142,8 @@ aside {
     }
 
     .navbar-default .navbar-header .navbar-brand {
-        background-color: rgba(240,95,64, .50);
         color: rgba(255,255,255,.7);
+        background-color: rgba(240,95,64, .50);
     }
 
     .navbar-default .navbar-header .navbar-brand:hover,
