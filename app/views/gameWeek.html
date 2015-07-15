@@ -91,25 +91,26 @@ Filter: <input type="text" ng-model="customerFilter.name"/>
 <br/>
 <br/> -->
 
-<h3>{{ gameWeeksCtrl.user.name}}</h3>
+<h3>{{ gameWeeksCtrl.gameWeeks[0].name}}</h3>
 <table>
-  <tr ng-click="usersCtrl.doSort('name')">name: </tr>
-  <br/>
-  <tr ng-click="usersCtrl.doSort('email')">email: </tr>
-  <br/>
-  <tr ng-click="usersCtrl.doSort('username')">username: </tr>
-  <br/>
-  <span>win percentage: </span>
-  <br/>
-  <tr ng-repeat="current_user in gameWeeksCtrl.users | filter: userFilter | orderBy:gameWeeksCtrl.sortBy:reverse">
-  <td>{{ gameWeeksCtrl.user.name }}</td>
-  <td>{{ gameWeeksCtrl.user.email }}</td>
-  <td>{{ gameWeeksCtrl.user.username }}</td>
-  <td>{{ gameWeeksCtrl.user.password}}</td>
-  <td><a href="#/users/{{user.id}}">edit account details</a></td>
-  <td><a href="#/users/{{user.id}}">game weeks</a></td>
-</tr>
+  <tr>
+    <th>Week</th>
+    <th>&nbsp;</th>
+    <br/>
+    <th>Season</th>
+    <th>&nbsp;</th>
+    <br/>
+  </tr>
+  <tr ng-repeat="game_week in gameWeeksCtrl.gameWeeks">
+    <td>{{ game_week.week_number }}</td>
+    <td>{{ game_week.season}}</td>
+    <!-- show all the games for this week -->
+    <tr ng-repeat="game in game_weeks">
+        <td>{{game.status}}</td>
+    <tr>
+  </tr>
 </table>
-<br/>
+<a href="/#/createGameWeek">create new week</a>
+<span>win percentage: </span>
 <br/>
 

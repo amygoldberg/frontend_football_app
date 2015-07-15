@@ -12,7 +12,7 @@
             controllerAs: 'usersCtrl',
             templateUrl: 'app/views/users.html'
           })
-          .when('/users/:userId', {
+          .when('/game_weeks', {
             controller: 'gameWeeksController',
             controllerAs: 'gameWeeksCtrl',
             templateUrl: 'app/views/gameWeek.html'
@@ -26,6 +26,11 @@
             controller: 'authCtrl',
             controllerAs: 'authCtrl',
             templateUrl: 'app/views/home.html'
+          })
+          .when('/createGameWeek', {
+            controller: 'gameWeeksController',
+            controllerAs: 'gameWeeksCtrl',
+            templateUrl: 'app/views/newGameWeek.html'
           })
           .otherwise({
             redirectTo: '/'

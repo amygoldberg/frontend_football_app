@@ -11,7 +11,7 @@ function authFactory($http, $location, $window) {
       angular.copy(response, currentUser);
       $window.localStorage.setItem('token', response.token);
       $http.defaults.headers.common.Authorization = 'Token token=' + response.token;
-      window.location.replace('http://localhost:5000/#/users/' + response.id);
+      window.location.replace('http://localhost:5000/#/game_weeks');
     });
   };
 
@@ -21,7 +21,7 @@ function authFactory($http, $location, $window) {
       angular.copy(response, currentUser);
       $window.localStorage.setItem('token', response.token);
       $http.defaults.headers.common.Authorization = 'Token token=' + response.token;
-      window.location.replace('http://localhost:5000/#/users/' + response.id);
+      window.location.replace('http://localhost:5000/#/game_weeks');
     });
   };
 
@@ -42,6 +42,7 @@ function authFactory($http, $location, $window) {
 
   return {
     login: login,
+    register: register,
     logout: logout,
     currentUser: currentUser,
     isLoggedIn: isLoggedIn

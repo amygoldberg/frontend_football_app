@@ -4,9 +4,15 @@
     var vm = this;
     vm.userId = $routeParams.userId;
     vm.user = gameWeeksFactory.user;
+    vm.gameWeeks = [];
 
     function init() {
-      gameWeeksFactory.getGameWeeks(vm.userId);
+      gameWeeksFactory.getGameWeeks()
+        .success(function(response) {
+          response.forEach(function(gameWeek) {
+            vm.gameWeeks.push(gameWeek);
+          })
+        });
     }
 
     init();

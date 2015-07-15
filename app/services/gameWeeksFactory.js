@@ -9,15 +9,18 @@
 
     factory.getGameWeeks = function(userId) {
       // allow access to the user's list of game weeks
-      return $http.get("http://localhost:3000/users/" + userId).success(function(response) {
-        angular.copy(response.gameWeeks, factory.gameWeeks);
-        angular.copy(response, factory.user);
-      });
+      return $http.get("http://localhost:3000/game_weeks")
     };
 
-    factory.getGameWeek = function(gameWeekId) {
-      return $http.get('http://localhost:3000/game_weeks/' + gameWeekId).success(function(response) {
-        angular.copy(response, factory.gameWeek);
+    // factory.getGameWeek = function(gameWeekId) {
+    //   return $http.get('http://localhost:3000/users/' + userId + 'game_weeks/' + gameWeekId).success(function(response) {
+    //     angular.copy(response, factory.gameWeek);
+    //   });
+    // };
+
+    factory.createGameWeek = function(gameWeekData) {
+      return $http.post('http://localhost:3000/game_weeks/', gameWeekData).success(function(response) {
+        angular.copy(response, factory.gameWeeks);
       });
     };
 
