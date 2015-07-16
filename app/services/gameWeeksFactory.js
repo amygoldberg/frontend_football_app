@@ -24,6 +24,11 @@
       });
     };
 
+    // TEST
+    factory.editUserDetails = function() {
+      return $http.patch('http://localhost:3000/game_weeks')
+    }
+
     return factory;
   };
 

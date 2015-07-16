@@ -32,6 +32,11 @@
             controllerAs: 'gameWeeksCtrl',
             templateUrl: 'app/views/newGameWeek.html'
           })
+          .when('/editUserDetails', {
+            controller: 'gameWeeksController',
+            controllerAs: 'gameWeeksCtrl',
+            templateUrl: 'app/views/editUserDetails.html'
+          })
           .otherwise({
             redirectTo: '/'
           });

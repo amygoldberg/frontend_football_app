@@ -34,7 +34,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" ng-app="footballApp">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -66,54 +66,41 @@
     <br/>
     <br/>
 
+<div ng-controller="gameWeeksCtrl as gameWeeksCtrl">
+    <form name="editUserDetailsForm">
+        <label for="name">name</label>
+        <input type="text" name="name" ng-model="gameWeeksCtrl.editUserDetailsForm.name" ng-minlength="1" ng-maxlength="25"></input>
+        <br/>
 
-<!-- <h3>{{ gameWeeksCtrl.user.name }} </h3>
-Filter: <input type="text" ng-model="customerFilter.name"/>
-<br/>
-<br/>
-<table>
-  <tr>
-    <th ng-click="customersCtrl.doSort('name')">Name</th>
-    <th ng-click="customersCtrl.doSort('city')">City</th>
-    <th ng-click="customersCtrl.doSort('orderTotal')">Order Total</th>
-    <th ng-click="customersCtrl.doSort('joined')">Joined</th>
-    <th>&nbsp;</th>
-  </tr>
-  <tr ng-repeat="cust in customersCtrl.customers | filter: customerFilter | orderBy:customersCtrl.sortBy:reverse">
-    <td>{{ cust.name }}</td>
-    <td>{{ cust.city}}</td>
-    <td>{{ cust.orderTotal | currency }}</td>
-    <td>{{ cust.joined | date}}</td>
-    <td><a href="#/orders/{{cust.id}}">View Orders</a></td>
-  </tr>
-</table>
-<br/>
-<br/>
-<br/> -->
+        <label for="email">email</label>
+        <input type="text" name="email" ng-model="gameWeeksCtrl.editUserDetailsForm.email" ng-minlength="5" ng-maxlength="50"></input>
+        <br/>
 
-<h3>{{ gameWeeksCtrl.name}}</h3>
-<table>
-  <tr>
-    <th>Week</th>
-    <th>&nbsp;</th>
-    <br/>
-    <th>Season</th>
-    <th>&nbsp;</th>
-    <br/>
-  </tr>
-  <tr ng-repeat="game_week in gameWeeksCtrl.gameWeeks">
-    <td>{{ game_week.week_number }}</td>
-    <td>{{ game_week.season}}</td>
-    <!-- show all the games for this week -->
-    <!-- <tr ng-repeat="game in {{game_weeks}}">
-        <td>{{game.status}}</td> -->
-    <tr>
-  </tr>
-</table>
-<a href="/#/editUserDetails">edit account details</a>
-<br/>
-<a href="/#/createGameWeek">create new week</a>
-<br/>
-<h4>win percentage: </h4>
-<br/>
+        <label for="username">username</label>
+        <input type="text" name="username" ng-model="gameWeeksCtrl.editUserDetailsForm.username" ng-minlength="1" ng-maxlength="30"></input>
+        <br/>
 
+        <label for="username">password</label>
+        <input type="password" name="password" ng-model="gameWeeksCtrl.editUserDetailsForm.password" ng-minlength="1" ng-maxlength="30"></input>
+        <br/>
+        <br/>
+
+        <input type="submit" ng-click="gameWeeksCtrl.editUserDetails(editUserDetailsForm)"></input>
+
+    </form>
+</div>
+
+<script>
+  angular.module("footballApp", [])
+  .controller("gameWeeksCtrl", function(){
+    this.editUserDetailsForm = {};
+    // set the initial contents of the name
+    this.myForm.name= "";
+    this.myForm.email = "";
+    this.myForm.username = "";
+    this.myForm.password = "";
+  });
+</script>
+
+
+</html>
