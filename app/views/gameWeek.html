@@ -101,15 +101,12 @@ Filter: <input type="text" ng-model="customerFilter.name"/>
     <th>&nbsp;</th>
     <br/>
   </tr>
-  <tr ng-repeat="game_week in gameWeeksCtrl.gameWeeks">
-    <td>{{ game_week.week_number }}</td>
-    <td>{{ game_week.season}}</td>
-    <!-- show all the games for this week -->
-    <!-- <tr ng-repeat="game in {{game_weeks}}">
-        <td>{{game.status}}</td> -->
-    <tr>
-  </tr>
 </table>
+<select ng-model="gameWeeksCtrl.currentWeek" ng-options="week.season for week in gameWeeksCtrl.gameWeeks"></select>
+<h1> Week {{gameWeeksCtrl.currentWeek.week_number}}</h1>
+<div ng-repeat="game in gameWeeksCtrl.currentWeek.games">
+    <h4>{{game.teams[0].name}} vs {{game.teams[1].name}}</h4>
+</div>
 <a href="/#/editUserDetails">edit account details</a>
 <br/>
 <a href="/#/createGameWeek">create new week</a>

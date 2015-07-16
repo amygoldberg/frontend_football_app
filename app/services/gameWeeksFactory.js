@@ -9,7 +9,9 @@
 
     factory.getGameWeeks = function(userId) {
       // allow access to the user's list of game weeks
-      return $http.get("http://localhost:3000/game_weeks")
+      return $http.get("http://localhost:3000/game_weeks").success(function(response) {
+        angular.copy(response, factory.gameWeeks);
+      })
     };
 
     // factory.getGameWeek = function(gameWeekId) {
@@ -19,7 +21,13 @@
     // };
 
     factory.createGameWeek = function(gameWeekData) {
-      return $http.post('http://localhost:3000/game_weeks/', gameWeekData).success(function(response) {
+      var gameWeek = {
+        game_week: {
+          games: gameWeekData,
+        }
+      };
+
+      return $http.post('http://localhost:3000/game_weeks/', gameWeek).success(function(response) {
         angular.copy(response, factory.gameWeeks);
       });
     };

@@ -91,17 +91,26 @@ aside {
 }
 
 .navbar-default .navbar-header .navbar-brand {
-    background-color: rgba(240,95,64, .50);
+    /*background-color:rgba(240, 95, 64, 0);*/
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
     color: #f05f40;
-
 }
+
+/*.navbar-default .nav > li>a, .navbar-default .nav>li>a:focus {
+background-color: rgba(187, 53, 25, 0);
+color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-default .navbar-header .navbar-brand {
+color: rgba(255,255,255,.7);
+background-color: rgba(187, 53, 25, 0);
+}*/
 
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
-    background-color: rgba(240,95,64, .50);
+    /*background-color: rgba(240, 95, 64, 0);*/
     color: #eb3812;
 
 }
@@ -496,4 +505,29 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #222;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar-default .nav > li>a, .navbar-default .nav>li>a:focus {
+background-color: rgba(187, 53, 25, 0);
+color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-default .navbar-header .navbar-brand {
+color: rgba(255,255,255,.7);
+background-color: rgba(187, 53, 25, 0);
 }
