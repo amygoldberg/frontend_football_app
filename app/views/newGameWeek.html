@@ -69,13 +69,13 @@
     <div >
       <form name="newGameWeekForm">
         <label for="new-game">create new game</label>
-        <select id="new-game" ng-model="gameWeeksCtrl.newGameWeekForm.game.favorite" ng-options="obj as obj.name for obj in gameWeeksCtrl.newGameWeekForm.teams">
+        <select id="new-game" ng-model="gameWeeksCtrl.newGameWeekForm.game.favorite" ng-options="obj as obj.name for obj in gameWeeksCtrl.teams">
           <option value="">favorite</option>
         </select>
-        <select id="new-game" ng-model="gameWeeksCtrl.newGameWeekForm.game.points" ng-options="obj as obj.points for obj in gameWeeksCtrl.newGameWeekForm.spreads">
+        <select id="new-game" ng-model="gameWeeksCtrl.newGameWeekForm.game.points" ng-options="obj as obj.points for obj in gameWeeksCtrl.spreads">
         </select>
         vs.
-        <select id="new-game" ng-model="gameWeeksCtrl.newGameWeekForm.game.underdog" ng-options="obj as obj.name for obj in gameWeeksCtrl.newGameWeekForm.teams">
+        <select id="new-game" ng-model="gameWeeksCtrl.newGameWeekForm.game.underdog" ng-options="obj as obj.name for obj in gameWeeksCtrl.teams">
           <option value="">underdog</option>
         </select>
 
@@ -87,6 +87,6 @@
       <h1>{{gameWeeksCtrl.newGames}}</h1>
       <br/>
 
-      <button style="width: 500px; height: 500px; background-color:red; color: white;" ng-click="gameWeeksCtrl.createGameWeek()">NEW GAME WEEK</button>
+      <button ng-click="gameWeeksCtrl.createGameWeek()">create new game week</button>
     </div>
 </html>

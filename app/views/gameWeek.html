@@ -66,32 +66,7 @@
     <br/>
     <br/>
 
-
-<!-- <h3>{{ gameWeeksCtrl.user.name }} </h3>
-Filter: <input type="text" ng-model="customerFilter.name"/>
-<br/>
-<br/>
-<table>
-  <tr>
-    <th ng-click="customersCtrl.doSort('name')">Name</th>
-    <th ng-click="customersCtrl.doSort('city')">City</th>
-    <th ng-click="customersCtrl.doSort('orderTotal')">Order Total</th>
-    <th ng-click="customersCtrl.doSort('joined')">Joined</th>
-    <th>&nbsp;</th>
-  </tr>
-  <tr ng-repeat="cust in customersCtrl.customers | filter: customerFilter | orderBy:customersCtrl.sortBy:reverse">
-    <td>{{ cust.name }}</td>
-    <td>{{ cust.city}}</td>
-    <td>{{ cust.orderTotal | currency }}</td>
-    <td>{{ cust.joined | date}}</td>
-    <td><a href="#/orders/{{cust.id}}">View Orders</a></td>
-  </tr>
-</table>
-<br/>
-<br/>
-<br/> -->
-
-<h3>{{ gameWeeksCtrl.name}}</h3>
+<!-- <h3>{{ gameWeeksCtrl.name}}</h3>
 <table>
   <tr>
     <th>Week</th>
@@ -101,16 +76,43 @@ Filter: <input type="text" ng-model="customerFilter.name"/>
     <th>&nbsp;</th>
     <br/>
   </tr>
-</table>
-<select ng-model="gameWeeksCtrl.currentWeek" ng-options="week.season for week in gameWeeksCtrl.gameWeeks"></select>
-<h1> Week {{gameWeeksCtrl.currentWeek.week_number}}</h1>
-<div ng-repeat="game in gameWeeksCtrl.currentWeek.games">
-    <h4>{{game.teams[0].name}} vs {{game.teams[1].name}}</h4>
-</div>
+</table> -->
+
+<!-- <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form> -->
+
 <a href="/#/editUserDetails">edit account details</a>
+<br/>
 <br/>
 <a href="/#/createGameWeek">create new week</a>
 <br/>
-<h4>win percentage: </h4>
 <br/>
+<h5>pick a game week: <select ng-model="gameWeeksCtrl.currentWeek" ng-options="week.week_number for week in gameWeeksCtrl.gameWeeks"></select></h5>
+<div ng-repeat="game in gameWeeksCtrl.currentWeek.games">
+    <h4>{{game.teams[0].name}} vs {{game.teams[1].name}}</h4>
+</div>
+<br/>
+<h5>win percentage: </h5>
+<br/>
+
+</html>
 
