@@ -1,6 +1,6 @@
 var app = angular.module('footballApp', ['ngRoute', 'appRoutes']);
 
-app.run(function($http, $window) {
+app.run(function($window, $http) {
   $http.defaults.useXDomain = true;
   delete $http.defaults.headers.common['X-Requested-With'];
   var token = $window.localStorage.getItem('token');
