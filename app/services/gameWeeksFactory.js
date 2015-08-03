@@ -1,7 +1,7 @@
 // path to heroku
 var baseURL = function() {
   // return "http://localhost:3000";
-  return "http://frozen-crag-4960.herokuapp.com";
+  return "https://frozen-crag-4960.herokuapp.com";
 };
 
 (function gameWeeksFactory() {
