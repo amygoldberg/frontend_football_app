@@ -1,8 +1,8 @@
 // path to heroku
-var baseURL = function() {
-  // return "http://localhost:3000";
-  return "http://frozen-crag-4960.herokuapp.com";
-};
+// var baseURL = function() {
+//   // return "http://localhost:3000";
+//   return "http://frozen-crag-4960.herokuapp.com";
+// };
 
 angular.module('footballApp').factory('authFactory', authFactory);
 
@@ -12,22 +12,21 @@ function authFactory($http, $location, $window) {
   var currentUser = {};
 
   var login = function(credentials) {
-    debugger;
-    return $http.post(baseURL() + '/login', credentials).success(function(response) {
+    return $http.post('http://localhost:3000/login', credentials).success(function(response) {
       angular.copy(response, currentUser);
       $window.localStorage.setItem('token', response.token);
       $http.defaults.headers.common.Authorization = 'Token token=' + response.token;
-      window.location.replace(baseURL() + '/#/game_weeks');
+      window.location.replace('http://localhost:3000/#/game_weeks');
     });
   };
 
   var register = function(credentials) {
 
-    return $http.post(baseURL() + '/register', credentials).success(function(response) {
+    return $http.post('http://localhost:3000/register', credentials).success(function(response) {
       angular.copy(response, currentUser);
       $window.localStorage.setItem('token', response.token);
       $http.defaults.headers.common.Authorization = 'Token token=' + response.token;
-      window.location.replace(baseURL() + '/#/game_weeks');
+      window.location.replace('http://localhost:3000/#/game_weeks');
     });
   };
 

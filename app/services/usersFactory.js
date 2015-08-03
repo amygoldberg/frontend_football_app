@@ -1,8 +1,8 @@
 // path to heroku
-var baseURL = function() {
-  // return "http://localhost:3000";
-  return "http://frozen-crag-4960.herokuapp.com";
-};
+// var baseURL = function() {
+//   // return "http://localhost:3000";
+//   return "http://frozen-crag-4960.herokuapp.com";
+// };
 
 (function usersFactory() {
 
@@ -15,13 +15,13 @@ var baseURL = function() {
     factory.getUsers = function() {
 
       // allow access to the list of users
-      return $http.get(baseURL() + '/users').success(function(response) {
+      return $http.get('http://localhost:3000/users').success(function(response) {
         angular.copy(response, factory.users);
       });
     };
 
     factory.getUser = function(userId) {
-      return $http.get(baseURL() + '/users/' + userId).success(function(response) {
+      return $http.get('http://localhost:3000/users/' + userId).success(function(response) {
         angular.copy(response, factory.user);
       });
     };

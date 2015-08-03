@@ -1,8 +1,8 @@
 // path to heroku
-var baseURL = function() {
-  // return "http://localhost:3000";
-  return "https://frozen-crag-4960.herokuapp.com";
-};
+// var baseURL = function() {
+//   // return "http://localhost:3000";
+//   return "https://frozen-crag-4960.herokuapp.com";
+// };
 
 (function gameWeeksFactory() {
 
@@ -15,7 +15,7 @@ var baseURL = function() {
 
     factory.getGameWeeks = function(userId) {
       // allow access to the user's list of game weeks
-      return $http.get(baseURL() + "/game_weeks").success(function(response) {
+      return $http.get("http://localhost:3000/game_weeks").success(function(response) {
         angular.copy(response, factory.gameWeeks);
         console.log(response.length, 'response');
         console.log(factory.gameWeeks, 'factory');
@@ -36,14 +36,14 @@ var baseURL = function() {
         }
       };
 
-      return $http.post(baseURL() + '/game_weeks/', gameWeek).success(function(response) {
+      return $http.post('http://localhost:3000/game_weeks/', gameWeek).success(function(response) {
         angular.copy(response, factory.gameWeeks);
       });
     };
 
     // TEST
     factory.editUserDetails = function() {
-      return $http.patch(baseURL() + '/game_weeks')
+      return $http.patch('http://localhost:3000/game_weeks')
     }
 
     return factory;
