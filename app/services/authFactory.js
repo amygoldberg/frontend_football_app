@@ -12,7 +12,7 @@ function authFactory($http, $location, $window) {
   var currentUser = {};
 
   var login = function(credentials) {
-
+    debugger;
     return $http.post(baseURL() + '/login', credentials).success(function(response) {
       angular.copy(response, currentUser);
       $window.localStorage.setItem('token', response.token);
